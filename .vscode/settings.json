@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "/home/ajeveritt/.virtualenvs/MarsRover/bin/python",
+    "python.autoComplete.extraPaths": [
+        "/home/ajeveritt/.virtualenvs/MarsRover/lib/python2.7/site-packages",
+        "/opt/ros/kinetic/lib/python2.7/dist-packages",
+        "/usr/lib/python2.7/dist-packages"
+    ],
+    "python.formatting.provider": "autopep8"
+}
