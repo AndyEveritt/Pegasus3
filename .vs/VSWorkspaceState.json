@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\development",
+    "\\development\\Autonomous_Nav",
+    "\\master",
+    "\\master\\src",
+    "\\master\\src\\encodometry",
+    "\\master\\src\\encodometry\\nodes",
+    "\\master\\src\\pegasus_nav",
+    "\\master\\src\\robot_localization",
+    "\\master\\src\\robot_localization\\src"
+  ],
+  "SelectedNode": "\\master\\src\\encodometry\\nodes\\test.py",
+  "PreviewInSolutionExplorer": false
+}
