@@ -1,16 +1,18 @@
 {
-  "configurations": [
-    {
-      "browse": {
-        "databaseFilename": "",
-        "limitSymbolsToIncludedHeaders": true
-      },
-      "includePath": [
-        "/opt/ros/kinetic/include",
-        "/home/ajeveritt/Documents/MarsRover/pegasus-3.0/master/autonomous_ws/src/pegasus_tf2/include",
-        "/usr/include"
-      ],
-      "name": "Linux"
-    }
-  ]
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/opt/ros/kinetic/include",
+                "/home/ajeveritt/Documents/MarsRover/pegasus-3.0/master/autonomous_ws/src/pegasus_tf2/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
 }
