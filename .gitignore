@@ -1,5 +1,3 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-/.vs/MarsRover/v15/Browse.VC.opendb
+.vscode/settings.json
+.vscode
+.vs

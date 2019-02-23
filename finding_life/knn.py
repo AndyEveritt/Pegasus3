@@ -3,6 +3,7 @@ from sklearn.neighbors import KNeighborsClassifier
 import imutils
 from imutils import paths
 import cv2
+import sys
 
 # known samples
 minerals = np.array([[0.1, 0.15, 0.4],
@@ -58,8 +59,7 @@ if __name__ == "__main__":
     model = knn_train(minerals, minerals_names)
     
     # label = model.predict(unknown)
-
-    stack = stack_images("./test_images")
+    stack = stack_images(sys.path[0] + "/test_images")
 
     label = model.predict(stack)
 
