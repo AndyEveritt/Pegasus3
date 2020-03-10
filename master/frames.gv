@@ -1,0 +1,14 @@
+digraph G {
+"chassis" -> "pointcloud_frame"[label="Broadcaster: /chassis_to_pointcloud_broadcaster\nAverage rate: 10.157 Hz\nMost recent transform: 1556798191.227 ( -0.071 sec old)\nBuffer length: 4.923 sec\n"];
+"base_link" -> "chassis"[label="Broadcaster: /baselink_to_chassis_broadcaster\nAverage rate: 10.174 Hz\nMost recent transform: 1556798191.163 ( -0.008 sec old)\nBuffer length: 4.718 sec\n"];
+"chassis" -> "gps"[label="Broadcaster: /chassis_to_gps_broadcaster\nAverage rate: 10.165 Hz\nMost recent transform: 1556798191.193 ( -0.038 sec old)\nBuffer length: 4.820 sec\n"];
+"chassis" -> "imu"[label="Broadcaster: /chassis_to_imu_broadcaster\nAverage rate: 10.180 Hz\nMost recent transform: 1556798191.191 ( -0.036 sec old)\nBuffer length: 4.814 sec\n"];
+"odom" -> "base_link"[label="Broadcaster: /encoder_noder\nAverage rate: 20.216 Hz\nMost recent transform: 1556798191.131 ( 0.024 sec old)\nBuffer length: 4.848 sec\n"];
+"map" -> "odom"[label="Broadcaster: /ekf_se_odom\nAverage rate: 30.010 Hz\nMost recent transform: 1556798191.082 ( 0.073 sec old)\nBuffer length: 4.798 sec\n"];
+"pointcloud_frame" -> "kinect2_rgb_optical_frame"[label="Broadcaster: /pointcloud_to_kinect_broadcaster\nAverage rate: 10.174 Hz\nMost recent transform: 1556798191.216 ( -0.061 sec old)\nBuffer length: 4.816 sec\n"];
+"map" -> "map__identity"[label="Broadcaster: /initialize_origin\nAverage rate: 1.250 Hz\nMost recent transform: 1556798190.834 ( 0.321 sec old)\nBuffer length: 4.000 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1556798191.155"[ shape=plaintext ] ;
+ }->"map";
+}

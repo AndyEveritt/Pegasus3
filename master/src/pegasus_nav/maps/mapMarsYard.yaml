@@ -1,0 +1,6 @@
+image: MarsYard.png
+resolution: 1.0
+origin: [0, 0, 0.000000]
+occupied_thresh: 0.3
+free_thresh: 0.3
+negate: 0

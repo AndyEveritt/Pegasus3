@@ -1,0 +1,18 @@
+<launch>
+
+    <!--- Run Mast camera -->
+    <include file="$(find pegasus_nav)/launch/usb_cam.launch" />
+
+    <!--- Run detect marker -->
+    <node pkg="pegasus_nav" type="detect_marker.py" name="detect_marker">
+        <param name="set_tracker" value="False"/>
+        <param name="reset_tracker" value="False"/>
+        <param name="frame_width" value="640"/>
+        <param name="template" value="/tennisBallTemplate2.jpg"/>
+        <param name="scale_upper" value="1"/>
+        <param name="scale_lower" value="0.5"/>
+        <param name="scale_steps" value="2"/>
+        <param name="threshold_multiplier" value="0.7"/>
+    </node>
+
+</launch>

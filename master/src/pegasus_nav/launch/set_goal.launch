@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="pegasus_nav" type="set_goal.py" name="set_goal">
+        <param name="goalLat" value="38 22.31500 0 N"/>
+        <param name="goalLon" value="110 42.26667 0 W"/>
+        <param name="isGoalDMS" value="True"/>
+    </node>
+</launch>

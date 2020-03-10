@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="rosserial_python" type="serial_node.py" name="imu_serial_node">
+        <param name="port" value="/dev/arduinoIMU"/>
+    </node>
+
+    <node pkg="pegasus_nav" type="imu_listener.py" name="imu_listener">
+        <param name="base_frame_id" value="imu"/>
+    </node>
+</launch>

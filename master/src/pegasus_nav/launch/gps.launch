@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find nmea_navsat_driver)/launch/nmea_serial_driver.launch">
+        <arg name="port" default="/dev/usbGPS" />
+    </include>
+
+    <!-- fake static gps message -->
+    <!-- <include file="$(find pegasus_nav)/launch/fake_gps.launch" /> -->
+
+    <arg name="location" default="MDRS"/>
+    <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform_node" respawn="true">
+
+        <param name="yaw_offset" value="0"/>
+        <param name="publish_filtered_gps" value="true"/>
+        <param name="magnetic_declination_radians" value="0"/>
+        <param name="wait_for_datum" value="true"/>
+
+        <rosparam param="datum" if="$(eval location == 'MDRS')">
+            [38.394589674635554, -110.7959362246549, 0.0, map, base_link]
+        </rosparam>
+        <rosparam param="datum" if="$(eval location == 'Soton')">
+            [50.933305568418874, -1.4179640269347744, 0.0, map, base_link]
+        </rosparam>
+        <rosparam param="datum" if="$(eval location == 'Hanksville')">
+            [38.371371, -110.704426, 0.0, map, base_link]
+        </rosparam>
+
+        <remap from="/imu/data" to="/imu/data" />
+        <remap from="/gps/fix" to="/gps/fix" />
+        <remap from="/odometry/filtered" to="/odometry/filtered" />
+
+    </node>
+
+
+    <node pkg="gps_goal" type="gps_goal" name="gps_goal" output="screen">
+        <param name="frame_id" value="map"/>
+        <!-- INPUT TOPICS -->
+        <remap from="gps_goal_pose" to="gps_goal_pose" />
+        <remap from="gps_goal_fix" to="gps_goal_fix" />
+        <remap from="local_xy_origin" to="local_xy_origin" />
+    </node>
+
+    <!-- set goal using: rostopic pub /gps_goal_fix sensor_msgs/NavSatFix "{latitude: x, longitude: y}" -1 -->
+    <arg name="origin" default="auto"/>
+    <node pkg="swri_transform_util" type="initialize_origin.py" name="initialize_origin" output="screen">
+        <param name="local_xy_frame" value="map"/>
+        <param name="local_xy_origin" value="$(arg origin)"/>
+        <!-- setting "auto" here will set the origin to the first GPS fix that it recieves -->
+        <remap from="fix" to="gps/fix"/>
+        <rosparam param="local_xy_origins">
+      [{ name: MDRS,
+         latitude: 38.40630,
+         longitude: -110.79201,
+         altitude: 0.0,
+         heading: 0.0}]
+        </rosparam>
+    </node>
+
+    
+
+    <!-- <node pkg="tf" type="static_transform_publisher" name="world_to_map_broadcaster" args="0 0 0 0 0 0 world__identity map 100" /> -->
+    <node pkg="tf" type="static_transform_publisher" name="chassis_to_gps_broadcaster" args="0 0 0 0 0 0 chassis gps 100" />
+
+</launch>

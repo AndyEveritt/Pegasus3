@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="location" default="MDRS"/>
+    <node pkg="pegasus_nav" type="set_initial.py" name="set_initial">
+        
+        <!-- Utah -->
+        <param name="mapUtm" value="517819.8383267763 4249616.747543993 12 S" if="$(eval location == 'MDRS')"/>
+        <param name="mapUtm" value="525819.2212436611 4247062.050924776 12 S" if="$(eval location == 'Hanksville')"/>
+
+        <!-- Southampton -->
+        <param name="mapUtm" value="611167.0 5643600.0 30 U" if="$(eval location == 'Soton')"/>
+    </node>
+</launch>

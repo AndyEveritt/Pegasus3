@@ -1,0 +1,6 @@
+image: Soton_map_444000_115000.png
+resolution: 1.0
+origin: [0, 0, 0.000000]
+occupied_thresh: 0.4
+free_thresh: 0.4
+negate: 1

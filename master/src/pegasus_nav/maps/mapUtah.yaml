@@ -1,0 +1,6 @@
+image: Utah_probability_map_ac_517819.8383267763_4249616.747543993.png
+resolution: 1.0
+origin: [0, 0, 0.000000]
+occupied_thresh: 0.2
+free_thresh: 0.2
+negate: 1

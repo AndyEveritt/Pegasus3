@@ -1,0 +1,22 @@
+digraph G {
+"base_link" -> "body"[label="Broadcaster: /pegasus3/pegasus3/vehicle_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 87.982 sec old)\nBuffer length: 0.000 sec\n"];
+"body" -> "electronics"[label="Broadcaster: /pegasus3/pegasus3/vehicle_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 87.982 sec old)\nBuffer length: 0.000 sec\n"];
+"base_link" -> "hokuyo"[label="Broadcaster: /pegasus3/pegasus3/vehicle_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 87.982 sec old)\nBuffer length: 0.000 sec\n"];
+"base_link" -> "imu_link"[label="Broadcaster: /pegasus3/pegasus3/vehicle_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 87.982 sec old)\nBuffer length: 0.000 sec\n"];
+"map" -> "odom"[label="Broadcaster: /slam_gmapping\nAverage rate: 20.286 Hz\nMost recent transform: 87.988 ( -0.006 sec old)\nBuffer length: 3.500 sec\n"];
+"hokuyo" -> "pegasus3/hokuyo"[label="Broadcaster: /pegasus3/hokuyo_broadcaster\nAverage rate: 10.259 Hz\nMost recent transform: 88.067 ( -0.085 sec old)\nBuffer length: 3.509 sec\n"];
+"base_link" -> "left_bogie_front_wheel"[label="Broadcaster: /pegasus3/pegasus3/vehicle_state_publisher\nAverage rate: 10.283 Hz\nMost recent transform: 87.965 ( 0.017 sec old)\nBuffer length: 3.501 sec\n"];
+"base_link" -> "left_bogie_rear_wheel"[label="Broadcaster: /pegasus3/pegasus3/vehicle_state_publisher\nAverage rate: 10.283 Hz\nMost recent transform: 87.965 ( 0.017 sec old)\nBuffer length: 3.501 sec\n"];
+"base_link" -> "left_rocker_rear_wheel"[label="Broadcaster: /pegasus3/pegasus3/vehicle_state_publisher\nAverage rate: 10.283 Hz\nMost recent transform: 87.965 ( 0.017 sec old)\nBuffer length: 3.501 sec\n"];
+"base_link" -> "right_bogie_front_wheel"[label="Broadcaster: /pegasus3/pegasus3/vehicle_state_publisher\nAverage rate: 10.283 Hz\nMost recent transform: 87.965 ( 0.017 sec old)\nBuffer length: 3.501 sec\n"];
+"base_link" -> "right_bogie_rear_wheel"[label="Broadcaster: /pegasus3/pegasus3/vehicle_state_publisher\nAverage rate: 10.283 Hz\nMost recent transform: 87.965 ( 0.017 sec old)\nBuffer length: 3.501 sec\n"];
+"base_link" -> "right_rocker_rear_wheel"[label="Broadcaster: /pegasus3/pegasus3/vehicle_state_publisher\nAverage rate: 10.283 Hz\nMost recent transform: 87.965 ( 0.017 sec old)\nBuffer length: 3.501 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 87.982"[ shape=plaintext ] ;
+ }->"base_link";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 87.982"[ shape=plaintext ] ;
+ }->"map";
+}

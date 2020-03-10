@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="rostopic" type="rostopic" name="fake_imu" args="pub /imu/data sensor_msgs/Imu --latch --file=$(find pegasus_nav)/config/fake.imu" output="screen"/>
+</launch>

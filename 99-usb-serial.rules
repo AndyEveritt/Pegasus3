@@ -1,0 +1,7 @@
+SUBSYSTEM=="tty", ATTRS{idVendor}=="2a03", ATTRS{idProduct}=="0043", ATTRS{serial}=="85539313931351603220", SYMLINK+="arduinoIMU"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0042", ATTRS{serial}=="95736323632351019122", SYMLINK+="arduinoRCU"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0042", ATTRS{serial}=="95736323632351D0A1C1", SYMLINK+="arduinoENCODER"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="8087", ATTRS{idProduct}=="0ab6", ATTRS{serial}=="K90424364", SYMLINK+="arduinoUDOO"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1546", ATTRS{idProduct}=="01a7", ATTRS{product}=="u-blox 7 - GPS/GNSS Receiver", SYMLINK+="usbGPS"
+SUBSYSTEM=="video4linux", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0825", ATTRS{serial}=="FC90CC10", SYMLINK+="cameraMAST"
+SUBSYSTEM=="video4linux", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0825", ATTRS{serial}=="24D6D480", SYMLINK+="cameraARM"

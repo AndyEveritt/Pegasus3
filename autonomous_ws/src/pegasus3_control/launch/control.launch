@@ -1,0 +1,16 @@
+<launch>
+    <arg name="namespace" default="pegasus3"/>
+
+    <group ns="$(arg namespace)">
+        <rosparam command="load" file="$(find pegasus3_control)/config/control.yaml" />
+
+        <node name="controller_spawner" pkg="controller_manager" type="spawner" args="rover_joint_publisher rover_velocity_controller --shutdown-timeout 1" />
+
+        <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
+            <rosparam command="load" file="$(find pegasus3_control)/config/robot_localization.yaml" />
+            <param name="imu0" value="imu/data"/>
+        </node>
+
+    </group>
+    <node pkg="topic_tools" type="relay" name="cmd_vel_relay" args="rover_target_vel pegasus3/rover_velocity_controller/cmd_vel" />
+</launch>

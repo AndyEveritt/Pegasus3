@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find kinect2_bridge)/launch/kinect2_bridge.launch"/>
+    <include file="$(find pegasus_nav)/launch/pointcloud_to_laserscan.launch">
+        <arg name="camera" value="kinect2"/>
+    </include>
+
+    <!-- <node pkg="image_rotate" type="image_rotate" name="rotate_kinect_image">
+        <remap from="image" to="/kinect2/qhd/image_color"/>
+        <remap from="rotated/image" to="/kinect2/qhd/image_color_rotated"/>
+        <param name="source_frame_id" value="kinect2_rgb_optical_frame"/>
+        <param name="target_frame_id" value="pointcloud_frame"/>
+        <param name="source_x" value="3.14"/>
+    </node> -->
+
+    <node pkg="tf" type="static_transform_publisher" name="chassis_to_pointcloud_broadcaster" args="0.3 0 -0.2 0 0 0 chassis pointcloud_frame 100" />
+    <node pkg="tf" type="static_transform_publisher" name="pointcloud_to_kinect_broadcaster" args="0 0 0 -1.571 3.14 -1.571 pointcloud_frame kinect2_rgb_optical_frame 100" />
+
+</launch>
